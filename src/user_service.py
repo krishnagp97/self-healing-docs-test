@@ -10,5 +10,10 @@ class UserService:
 
     def update_user(
         self,
+        user_id: int, 
+        include_email: bool
     ) -> bool:
         return True
+
+    def delete_user(self, name: str) -> str:
+            return f"delete user {name}"
