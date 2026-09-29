@@ -1,8 +1,5 @@
 # User Service
 
-## get_user
+get_user retrieves a user by ID.
 
-`UserService.get_user` retrieves a user by ID.
-
-
-`UserService.create_user` creates a user by name.
+create_user creates a user by name.
