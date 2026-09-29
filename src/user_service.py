@@ -8,5 +8,12 @@ class UserService:
     def create_user(self, name: str) -> str:
         return f"Created user {name}"
 
-    def update_user(self, user_id: int, name: str) -> bool:
-      return True
+    def update_user(
+        self,
+        user_id: int,
+        name: str,
+    ) -> bool:
+        return True
+
+    def delete_user(self, name: str) -> str:
+            return f"delete user {name}"
