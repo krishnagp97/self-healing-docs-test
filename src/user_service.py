@@ -9,11 +9,14 @@ class UserService:
         return f"Created user {name}"
 
     def update_user(
-        self,
-        user_id: int, 
-        include_email: bool
-    ) -> bool:
-        return True
+    self,
+    user_id: int,
+    include_email: bool,
+    notify: bool = False
+) -> bool:
+      return True
 
-    def delete_user(self, name: str) -> str:
-            return f"delete user {name}"
+
+
+    def archive_user(self, user_id: int) -> bool:
+      return True
