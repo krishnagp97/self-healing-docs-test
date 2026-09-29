@@ -16,4 +16,7 @@ class UserService:
     ) -> bool:
         return True
 
+    def archive_user(self, user_id: int) -> bool:
+        return True
+
 
