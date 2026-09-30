@@ -5,7 +5,8 @@ class UserService:
         user_id: int,
         include_email: bool = False,
         include_phone: bool = False,
-        include_address: bool = False
+        include_address: bool = False,
+        include_orders: bool = False
     ) -> str:
         result = f"User {user_id}"
 
@@ -18,38 +19,11 @@ class UserService:
         if include_address:
             result += " - Bengaluru"
 
+        if include_orders:
+            result += " - 5 orders"
+
         return result
 
-    def create_user(
-        self,
-        name: str,
-        email: str,
-        phone: str = ""
-    ) -> dict:
-        return {
-            "name": name,
-            "email": email,
-            "phone": phone
-        }
-
-    def update_user(
-        self,
-        user_id: int,
-        name: str,
-        email: str,
-        notify: bool = False,
-        validate: bool = True
-    ) -> bool:
-        if validate and not name:
-            return False
-
-        if validate and not email:
-            return False
-
-        if notify:
-            self._send_update_notification(user_id)
-
-        return True
 
     def search_users(
         self,
@@ -108,3 +82,10 @@ class UserService:
 
     def _record_status_change(self, user_id: int, reason: str) -> None:
         print(f"User {user_id} status changed: {reason}")
+
+    def get_user_preferences(self, user_id: int) -> dict:
+        return {
+            "user_id": user_id,
+            "notifications": True,
+            "theme": "light"
+        }
